@@ -78,11 +78,43 @@ El objetivo fue construir una experiencia de usuario limpia, minimalista y profe
 
 ![Google Stitch Preview](assets/stitch-preview.png)
 
-## Explorar el diseño interactivo
+---
 
-👉 **Google Stitch**
+---
+
+# 🎨 Diseño de la Interfaz (UI/UX)
+
+<div align="center">
+
+### 🚀 Prototipo de Alta Fidelidad desarrollado con **Google Stitch**
+
+Diseño moderno inspirado en **Supabase**, **Vercel**, **Linear** y **shadcn/ui**, enfocado en una experiencia de usuario limpia, minimalista y orientada a entornos empresariales.
+
+<br>
+
+<p>
+<a href="https://stitch.withgoogle.com/projects/7250272114523253897">
+    <img src="assets/stitch-preview.png" alt="Google Stitch Preview" width="95%">
+</a>
+</p>
+
+<br>
+
+### 🔗 Explorar el diseño interactivo
+
+<p>
+<a href="https://stitch.withgoogle.com/projects/7250272114523253897">
+<img src="https://img.shields.io/badge/🚀%20Abrir%20Proyecto%20en%20Google%20Stitch-4285F4?style=for-the-badge&logo=google&logoColor=white">
+</a>
+</p>
+
+**Proyecto público:**
 
 https://stitch.withgoogle.com/projects/7250272114523253897
+
+</div>
+
+> 💡 **Nota:** El prototipo fue generado utilizando **Google Stitch**, una herramienta de Google Labs para el diseño de interfaces mediante IA. Posteriormente será utilizado como referencia para la implementación completa del frontend con **Next.js**, **TypeScript**, **Tailwind CSS** y **shadcn/ui**. :contentReference[oaicite:0]{index=0}
 
 ---
 
