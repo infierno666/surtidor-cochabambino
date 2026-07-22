@@ -1,11 +1,90 @@
-# ⛽ El Surtidor Cochabambino
-### Sistema Digital de Control y Gestión para Estación de Servicio
+
+<div align="center">
+
+# ⛽ Sistema Digital de Control y Gestión para Surtidor de Gasolina
+### *"El Surtidor Cochabambino"*
+
+<p>
+Sistema moderno para la administración integral de una estación de servicio, desarrollado con tecnologías web de última generación, arquitectura escalable y principios de Sistemas Digitales.
+</p>
+
+<br>
+
+![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=next.js&logoColor=white)
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=for-the-badge&logo=tailwind-css&logoColor=white)
+
+![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-336791?style=for-the-badge&logo=postgresql&logoColor=white)
+![Zustand](https://img.shields.io/badge/Zustand-443E38?style=for-the-badge)
+![Figma](https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white)
+
+![Jest](https://img.shields.io/badge/Jest-C21325?style=for-the-badge&logo=jest&logoColor=white)
+![SonarQube](https://img.shields.io/badge/SonarQube-4E9BCD?style=for-the-badge&logo=sonarqube&logoColor=white)
+![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)
+
+<br>
+
+![License](https://img.shields.io/github/license/infierno666/surtidor-cochabambino?style=flat-square)
+![Stars](https://img.shields.io/github/stars/infierno666/surtidor-cochabambino?style=flat-square)
+![Forks](https://img.shields.io/github/forks/infierno666/surtidor-cochabambino?style=flat-square)
+![Issues](https://img.shields.io/github/issues/infierno666/surtidor-cochabambino?style=flat-square)
+![Last Commit](https://img.shields.io/github/last-commit/infierno666/surtidor-cochabambino?style=flat-square)
+
+</div>
+
+---
+
+## 🚀 Tecnologías Principales
+
+<div align="center">
+
+| Frontend | Backend | Base de Datos | UI | Estado | Testing | Deploy |
+|:---------:|:-------:|:-------------:|:--:|:------:|:-------:|:------:|
+| <img src="https://skillicons.dev/icons?i=nextjs" height="48"><br>Next.js | <img src="https://skillicons.dev/icons?i=supabase" height="48"><br>Supabase | <img src="https://skillicons.dev/icons?i=postgres" height="48"><br>PostgreSQL | <img src="https://skillicons.dev/icons?i=tailwind" height="48"><br>Tailwind CSS | <img src="https://raw.githubusercontent.com/pmndrs/zustand/main/docs/bear.jpg" height="48"><br>Zustand | <img src="https://skillicons.dev/icons?i=jest" height="48"><br>Jest | <img src="https://skillicons.dev/icons?i=vercel" height="48"><br>Vercel |
+
+</div>
+
+---
+
+## 🛠️ Ecosistema Tecnológico
+
+<div align="center">
+
+<img src="https://skillicons.dev/icons?i=nextjs,react,typescript,tailwind,supabase,postgres,figma,git,github,vscode,vercel,npm" />
+
+</div>
+
+---
+
+## Sistema Digital de Control y Gestión para Estación de Servicio
 
 [![Estado](https://img.shields.io/badge/estado-en%20desarrollo-yellow)]()
 [![Licencia](https://img.shields.io/badge/licencia-MIT-blue)]()
 [![Materia](https://img.shields.io/badge/materia-Programación%204-orange)]()
 
 Proyecto final de la materia **Programación 4**. Aplicación web multiplataforma para la gestión operativa de la estación de servicio **"El Surtidor Cochabambino"** (Cochabamba, Bolivia). El proyecto integra el desarrollo de software con los fundamentos teóricos de **Sistemas Digitales** (códigos binarios, álgebra de Boole, mapas de Karnaugh, compuertas lógicas y decodificadores) sobre un caso real de gestión de surtidores, ventas, alertas e inventario.
+
+---
+
+# 🎨 Diseño de la Interfaz (UI/UX)
+
+La interfaz del proyecto fue diseñada utilizando **Google Stitch**, siguiendo principios modernos de diseño inspirados en **Supabase**, **Vercel**, **Linear** y **shadcn/ui**.
+
+El objetivo fue construir una experiencia de usuario limpia, minimalista y profesional para la gestión integral de una estación de servicio.
+
+## Vista previa del proyecto
+
+![Google Stitch Preview](assets/stitch-preview.png)
+
+## Explorar el diseño interactivo
+
+👉 **Google Stitch**
+
+https://stitch.withgoogle.com/projects/7250272114523253897
+
+---
 
 ---
 
