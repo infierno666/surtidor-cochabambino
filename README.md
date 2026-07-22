@@ -7,8 +7,6 @@
 
 Proyecto final de la materia **Programación 4**. Aplicación web multiplataforma para la gestión operativa de la estación de servicio **"El Surtidor Cochabambino"** (Cochabamba, Bolivia). El proyecto integra el desarrollo de software con los fundamentos teóricos de **Sistemas Digitales** (códigos binarios, álgebra de Boole, mapas de Karnaugh, compuertas lógicas y decodificadores) sobre un caso real de gestión de surtidores, ventas, alertas e inventario.
 
-> 📌 **Nota de configuración:** este README asume el stack tecnológico indicado en la sección 1. Si tu equipo decide cambiarlo, ajusta esa sección — el resto del documento (lógica digital, patrones, cronograma) es independiente del framework elegido.
-
 ---
 
 ## 📑 Tabla de Contenidos
@@ -42,7 +40,6 @@ Proyecto final de la materia **Programación 4**. Aplicación web multiplataform
 
 > **¿Por qué funciona bien en Vercel?** Vercel es serverless: cada request a una API route levanta una función efímera sin disco persistente, por eso SQLite local no era ideal ahí. Con Supabase, la base de datos vive fuera de Vercel (en la infraestructura de Supabase), así que Vercel solo necesita las variables de entorno para conectarse — cero fricción.
 >
-> Alternativas válidas si tu equipo prefiere otra ruta: **Flutter** (Dart + supabase_flutter) o **.NET MAUI** (C# + Supabase REST). La lógica digital de las secciones 2 y 3 se mantiene idéntica sin importar el framework.
 
 ---
 
@@ -185,7 +182,7 @@ alertas
 
 ```bash
 # Clonar el repositorio
-git clone https://github.com/<tu-usuario>/surtidor-cochabambino.git
+git clone https://github.com/infierno666/surtidor-cochabambino.git
 cd surtidor-cochabambino
 
 # Instalar dependencias
@@ -263,7 +260,7 @@ NEXT_PUBLIC_SUPABASE_ANON_KEY="<tu-anon-key>"
 
 | Nombre | Rol |
 |---|---|
-| *(completar)* | *(completar)* |
+| Daniel Maldonado Cespedes | Desarrollador FullStack|
 
 ---
 
