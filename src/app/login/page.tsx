@@ -3,6 +3,11 @@
 import { useState, type FormEvent } from 'react'
 import { useRouter } from 'next/navigation'
 import { createClient } from '@/lib/supabase/client'
+import { Button } from '@/components/ui/button'
+import { Input } from '@/components/ui/input'
+import { Label } from '@/components/ui/label'
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
+import { Fuel, Loader2 } from 'lucide-react'
 
 export default function LoginPage() {
   const router = useRouter()
@@ -36,102 +41,110 @@ export default function LoginPage() {
       return
     }
 
-    router.push('/')
+    router.push('/dashboard')
     router.refresh()
   }
 
   return (
-    <main
-      style={{
-        minHeight: '100vh',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        background: '#0e1319',
-        color: '#e8edf3',
-        fontFamily: 'monospace',
-      }}
-    >
-      <form
-        onSubmit={handleSubmit}
-        style={{
-          width: 320,
-          padding: 24,
-          border: '1px solid #2b3542',
-          borderRadius: 8,
-          display: 'flex',
-          flexDirection: 'column',
-          gap: 12,
-        }}
-      >
-        <h1 style={{ fontSize: '1.1rem', margin: 0 }}>⛽ El Surtidor Cochabambino</h1>
-        <p style={{ margin: 0, color: '#8a99ab', fontSize: '0.85rem' }}>
-          {modo === 'login' ? 'Inicia sesión' : 'Crea tu cuenta'}
-        </p>
+    <main className="min-h-screen bg-background flex items-center justify-center p-4">
+      <Card className="w-full max-w-md bg-card border-border text-card-foreground shadow-2xl">
+        <CardHeader className="space-y-1 text-center">
+          <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-500/10 text-emerald-500 mb-2">
+            <Fuel className="h-6 w-6" />
+          </div>
+          <CardTitle className="text-2xl font-bold tracking-tight text-foreground">
+            Surtidor Cochabambino
+          </CardTitle>
+          <CardDescription className="text-muted-foreground">
+            {modo === 'login' 
+              ? 'Ingresa tus credenciales para acceder al panel' 
+              : 'Regístrate para solicitar acceso al sistema'}
+          </CardDescription>
+        </CardHeader>
 
-        {modo === 'registro' && (
-          <input
-            type="text"
-            placeholder="Nombre completo"
-            value={nombreCompleto}
-            onChange={(e) => setNombreCompleto(e.target.value)}
-            required
-            style={inputStyle}
-          />
-        )}
+        <form onSubmit={handleSubmit}>
+          <CardContent className="space-y-4">
+            {error && (
+              <div className="bg-destructive/10 border border-destructive/20 text-destructive text-sm p-3 rounded-md">
+                {error}
+              </div>
+            )}
 
-        <input
-          type="email"
-          placeholder="correo@ejemplo.com"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-          style={inputStyle}
-        />
-        <input
-          type="password"
-          placeholder="Contraseña (mín. 6 caracteres)"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-          minLength={6}
-          style={inputStyle}
-        />
+            {modo === 'registro' && (
+              <div className="space-y-2">
+                <Label htmlFor="nombre">Nombre Completo</Label>
+                <Input
+                  id="nombre"
+                  type="text"
+                  placeholder="Juan Pérez"
+                  value={nombreCompleto}
+                  onChange={(e) => setNombreCompleto(e.target.value)}
+                  required
+                  className="bg-zinc-900 border-border text-foreground"
+                />
+              </div>
+            )}
 
-        {error && <p style={{ color: '#ff4d4d', fontSize: '0.8rem', margin: 0 }}>{error}</p>}
+            <div className="space-y-2">
+              <Label htmlFor="email">Correo Electrónico</Label>
+              <Input
+                id="email"
+                type="email"
+                placeholder="operador@surtidor.com"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+                className="bg-zinc-900 border-border text-foreground"
+              />
+            </div>
 
-        <button type="submit" disabled={cargando} style={buttonStyle}>
-          {cargando ? 'Procesando...' : modo === 'login' ? 'Iniciar sesión' : 'Crear cuenta'}
-        </button>
+            <div className="space-y-2">
+              <Label htmlFor="password">Contraseña</Label>
+              <Input
+                id="password"
+                type="password"
+                placeholder="••••••••"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+                minLength={6}
+                className="bg-zinc-900 border-border text-foreground"
+              />
+            </div>
+          </CardContent>
 
-        <button
-          type="button"
-          onClick={() => setModo(modo === 'login' ? 'registro' : 'login')}
-          style={{ background: 'none', border: 'none', color: '#46d9c6', cursor: 'pointer', fontSize: '0.8rem' }}
-        >
-          {modo === 'login' ? '¿No tienes cuenta? Regístrate' : '¿Ya tienes cuenta? Inicia sesión'}
-        </button>
-      </form>
+          <CardFooter className="flex flex-col space-y-4 pt-2">
+            <Button 
+              type="submit" 
+              disabled={cargando}
+              className="w-full bg-zinc-100 text-zinc-900 hover:bg-zinc-200 font-medium"
+            >
+              {cargando ? (
+                <>
+                  <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                  Procesando...
+                </>
+              ) : modo === 'login' ? (
+                'Iniciar Sesión'
+              ) : (
+                'Crear Cuenta'
+              )}
+            </Button>
+
+            <div className="text-center">
+              <button
+                type="button"
+                onClick={() => setModo(modo === 'login' ? 'registro' : 'login')}
+                className="text-xs text-zinc-400 hover:text-zinc-100 transition-colors"
+              >
+                {modo === 'login' 
+                  ? '¿No tienes cuenta? Regístrate aquí' 
+                  : '¿Ya tienes cuenta? Inicia sesión'}
+              </button>
+            </div>
+          </CardFooter>
+        </form>
+      </Card>
     </main>
   )
-}
-
-const inputStyle: React.CSSProperties = {
-  background: '#181f28',
-  border: '1px solid #2b3542',
-  borderRadius: 6,
-  color: '#e8edf3',
-  padding: '8px 10px',
-  fontFamily: 'inherit',
-  fontSize: '0.85rem',
-}
-
-const buttonStyle: React.CSSProperties = {
-  background: '#46d9c6',
-  color: '#06201d',
-  border: 'none',
-  borderRadius: 6,
-  padding: '10px 12px',
-  fontWeight: 600,
-  cursor: 'pointer',
 }
