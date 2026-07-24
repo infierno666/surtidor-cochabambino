@@ -76,7 +76,7 @@ El objetivo fue construir una experiencia de usuario limpia, minimalista y profe
 
 ## Vista previa del proyecto
 
-![Google Stitch Preview](assets/stitch-preview.png)
+![Google Stitch Preview](public/stitch-preview.png)
 
 ---
 
