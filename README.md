@@ -8,7 +8,16 @@
 <p>
 Sistema moderno para la administración integral de una estación de servicio, desarrollado con tecnologías web de última generación, arquitectura escalable y principios de Sistemas Digitales.
 </p>
+---
+## 🧪 Credenciales de Acceso (Usuario de Prueba)
 
+Para evaluar y probar el sistema con privilegios de administrador, puedes utilizar las siguientes credenciales en la interfaz de inicio de sesión:
+
+* **URL de Producción:** [https://surtidor-cochabambino.vercel.app](https://surtidor-cochabambino.vercel.app)
+* **Correo Electrónico:** `mago3000.daniel@gmail.com`
+* **Contraseña:** `12345678`
+* **Rol Asignado:** Administrador (Acceso completo a la gestión de turnos, inventario, bombas y políticas RLS).
+---
 <br>
 
 ![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=next.js&logoColor=white)
