@@ -8,7 +8,7 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card'
-import { Eye, EyeOff, Fuel, Loader2, Mail, Lock, User, ArrowRight, Activity, TerminalSquare, CheckCircle2 } from 'lucide-react'
+import { Eye, EyeOff, Fuel, Loader2, Mail, Lock, User, ArrowRight, Activity, TerminalSquare, Info } from 'lucide-react'
 import { AnimatedBackground } from '@/components/login/AnimatedBackground'
 
 // Colores reales de combustible para una UI más inmersiva e industrial
@@ -69,6 +69,14 @@ export default function LoginPage() {
     router.refresh()
   }
 
+  // Función para rellenar datos de prueba
+  const autocompletarPrueba = () => {
+    setModo('login')
+    setEmail('mago3000.daniel@gmail.com')
+    setPassword('12345678')
+    setError(null)
+  }
+
   // Helpers para animaciones secuenciales ultra-fluidas (Cubic Bezier)
   const fadeUp = (delayMs: number) =>
     cn(
@@ -80,12 +88,10 @@ export default function LoginPage() {
   return (
     <main className="min-h-screen bg-zinc-950 flex relative overflow-hidden selection:bg-emerald-500/30 selection:text-emerald-200">
 
-      {/* Fondo Interactivo (Z-index más bajo para que quede al fondo) */}
+      {/* Fondo Interactivo */}
       <div className="absolute inset-0 z-0">
         <AnimatedBackground />
       </div>
-
-      {/* Textura de ruido sutil por encima del fondo animado para darle un toque premium */}
       <div className="absolute inset-0 z-0 opacity-[0.15] bg-[radial-gradient(circle_at_1.5px_1.5px,var(--tw-colors-emerald-500)_1.5px,transparent_0)] bg-[size:32px_32px] pointer-events-none [mask-image:radial-gradient(ellipse_at_center,black_10%,transparent_80%)]" />
 
       {/* ========================================================= */}
@@ -93,7 +99,6 @@ export default function LoginPage() {
       {/* ========================================================= */}
       <div className="hidden lg:flex lg:w-[50%] xl:w-[55%] flex-col justify-between border-r border-zinc-800/40 bg-zinc-950/40 backdrop-blur-2xl p-16 relative z-10">
 
-        {/* Logo / Cabecera */}
         <div className={cn('relative flex items-center gap-4 group cursor-default', fadeUp(0))} style={fadeUpStyle(0)}>
           <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-500 text-zinc-950 shadow-[0_0_30px_rgba(16,185,129,0.3)] transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3">
             <Fuel className="h-6 w-6 shrink-0" />
@@ -108,7 +113,6 @@ export default function LoginPage() {
           </div>
         </div>
 
-        {/* Contenido Central */}
         <div className="relative space-y-12 max-w-2xl">
           <div className={cn('space-y-5', fadeUp(150))} style={fadeUpStyle(150)}>
             <div className="inline-flex items-center gap-2 rounded-full bg-zinc-900/60 border border-zinc-700/50 px-4 py-1.5 text-xs font-medium text-zinc-300 backdrop-blur-md shadow-sm">
@@ -120,7 +124,6 @@ export default function LoginPage() {
             </h1>
           </div>
 
-          {/* Miniatura de Telemetría Realística (Glassmorphism Avanzado) */}
           <div
             className={cn(
               'rounded-2xl border border-zinc-700/30 bg-zinc-900/40 p-6 shadow-2xl backdrop-blur-xl relative overflow-hidden group',
@@ -128,7 +131,6 @@ export default function LoginPage() {
             )}
             style={fadeUpStyle(300)}
           >
-            {/* Brillo dinámico superior */}
             <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-emerald-500/50 to-transparent opacity-50 group-hover:opacity-100 transition-opacity duration-700" />
 
             <div className="mb-6 flex items-center justify-between">
@@ -192,7 +194,6 @@ export default function LoginPage() {
       <div className="flex flex-1 items-center justify-center p-6 relative z-20">
         <div className={cn('w-full max-w-md', fadeUp(200))} style={fadeUpStyle(200)}>
 
-          {/* Logo móvil */}
           <div className="mb-10 flex items-center justify-center gap-3 lg:hidden">
             <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-emerald-500 shadow-[0_0_20px_rgba(16,185,129,0.4)]">
               <Fuel className="h-5 w-5 text-zinc-950 shrink-0" />
@@ -202,9 +203,8 @@ export default function LoginPage() {
             </span>
           </div>
 
-          {/* Tarjeta de Formulario - Mayor transparencia para dejar ver el fondo animado */}
           <Card className="border-zinc-700/30 bg-zinc-950/50 backdrop-blur-2xl shadow-[0_0_50px_rgba(0,0,0,0.5)]">
-            <CardHeader className="space-y-2 pb-8 pt-8 px-8">
+            <CardHeader className="space-y-2 pb-6 pt-8 px-8">
               <h2 className="text-3xl font-black tracking-tight text-zinc-50">
                 {modo === 'login' ? 'Acceso al Sistema' : 'Solicitar Acceso'}
               </h2>
@@ -217,6 +217,30 @@ export default function LoginPage() {
 
             <form onSubmit={handleSubmit} autoComplete="on">
               <CardContent className="space-y-5 px-8">
+
+                {/* ======================================= */}
+                {/* CAJA DE CREDENCIALES RÁPIDAS DE PRUEBA */}
+                {/* ======================================= */}
+                <div className="mb-4 rounded-xl border border-emerald-500/30 bg-emerald-500/10 p-4 shadow-inner backdrop-blur-sm">
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-2">
+                    <span className="flex items-center gap-1.5 text-xs font-bold text-emerald-400 uppercase tracking-widest">
+                      <Info className="w-3.5 h-3.5" /> Modo Pruebas
+                    </span>
+                    <Button
+                      type="button"
+                      variant="outline"
+                      size="sm"
+                      onClick={autocompletarPrueba}
+                      className="h-8 text-xs font-bold bg-zinc-950/50 text-emerald-400 border-emerald-500/40 hover:bg-emerald-500 hover:text-zinc-950 transition-colors"
+                    >
+                      Autocompletar
+                    </Button>
+                  </div>
+                  <div className="text-[11px] text-zinc-400 font-mono space-y-1">
+                    <p>Email: <span className="text-zinc-200">mago3000.daniel@gmail.com</span></p>
+                    <p>Pass: <span className="text-zinc-200">12345678</span></p>
+                  </div>
+                </div>
 
                 {/* Mensaje de Error */}
                 <div
@@ -231,7 +255,6 @@ export default function LoginPage() {
                   </div>
                 </div>
 
-                {/* Campo: Nombre (Solo en Registro) */}
                 <div
                   className={cn(
                     'space-y-2 overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]',
@@ -256,7 +279,6 @@ export default function LoginPage() {
                   </div>
                 </div>
 
-                {/* Campo: Correo */}
                 <div className="space-y-2">
                   <Label htmlFor="email" className="text-zinc-300 font-medium ml-1">Correo electrónico</Label>
                   <div className="relative group">
@@ -274,7 +296,6 @@ export default function LoginPage() {
                   </div>
                 </div>
 
-                {/* Campo: Contraseña */}
                 <div className="space-y-2">
                   <Label htmlFor="password" className="text-zinc-300 font-medium ml-1">Contraseña</Label>
                   <div className="relative group">
@@ -303,7 +324,6 @@ export default function LoginPage() {
               </CardContent>
 
               <CardFooter className="flex flex-col space-y-6 pt-4 pb-10 px-8">
-                {/* Botón Principal - Efecto Glow Fuerte */}
                 <Button
                   type="submit"
                   disabled={cargando}
@@ -323,7 +343,6 @@ export default function LoginPage() {
                   )}
                 </Button>
 
-                {/* Switch Login/Registro */}
                 <div className="relative w-full">
                   <div className="absolute inset-0 flex items-center">
                     <span className="w-full border-t border-zinc-700/50" />
